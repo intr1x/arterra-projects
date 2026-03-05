@@ -70,7 +70,7 @@ export function ProjectsSection() {
           subtitle={"Based on a book by Ernesto Sabato\nand music by Alfred Schittke"}
           bgColor="#f2f2f2"
           imageClassName="mix-blend-multiply"
-          objectPosition="center 30%"
+          objectPosition="center 15%"
         />
         <ProjectCard
           href="/projects/the-infamous-ramirez-hoffman"

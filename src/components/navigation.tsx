@@ -29,7 +29,7 @@ export function Navigation() {
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         isScrolled && !isMenuOpen
           ? "bg-white border-b border-black/10 py-3 lg:py-4"
-          : "bg-transparent py-5 lg:py-6"
+          : "bg-transparent py-10 lg:py-16"
       }`}
     >
       <div className="flex items-center justify-between px-6 md:px-10 lg:px-20">

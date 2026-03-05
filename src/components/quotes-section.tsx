@@ -19,7 +19,7 @@ function Quote({ avatar, quote, author, align = "left" }: QuoteProps) {
           src={avatar}
           alt={author}
           fill
-          className="object-cover"
+          className="object-cover object-top"
           sizes="64px"
         />
       </div>
@@ -45,7 +45,7 @@ export function QuotesSection() {
         align="left"
       />
       <Quote
-        avatar="/images/project-hoffman.jpg"
+        avatar="/images/artist-terenkova.jpg"
         quote={`\u201cThe synthesis of music and text takes us beyond the field of consciousness. Music always draws us into a dialogue, which ultimately becomes a conversation with ourselves.\u201d`}
         author="Anastasya Terenkova"
         align="right"

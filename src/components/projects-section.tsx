@@ -8,6 +8,7 @@ interface ProjectCardProps {
   subtitle: string;
   bgColor: string;
   imageClassName?: string;
+  objectPosition?: string;
 }
 
 function ProjectCard({
@@ -17,11 +18,12 @@ function ProjectCard({
   subtitle,
   bgColor,
   imageClassName,
+  objectPosition = "center",
 }: ProjectCardProps) {
   return (
     <Link
       href={href}
-      className="relative block w-full lg:w-1/2 h-[420px] md:h-[600px] lg:h-[923px] rounded-lg overflow-hidden group"
+      className="relative block w-full lg:w-1/2 aspect-[4/3] md:aspect-[3/2] rounded-lg overflow-hidden group"
       style={{ backgroundColor: bgColor }}
     >
       <div className="absolute inset-0">
@@ -30,6 +32,7 @@ function ProjectCard({
           alt={title}
           fill
           className={`object-cover transition-transform duration-700 group-hover:scale-105 ${imageClassName ?? ""}`}
+          style={{ objectPosition }}
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
@@ -51,10 +54,13 @@ function ProjectCard({
 
 export function ProjectsSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20">
-      <p className="font-medium text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-black mb-6 lg:mb-10">
-        Projects
-      </p>
+    <section className="bg-white px-6 md:px-10 lg:px-20 pt-12 lg:pt-20">
+      <div className="flex items-center gap-4 mb-6 lg:mb-10">
+        <p className="font-medium text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-black shrink-0">
+          Projects
+        </p>
+        <div className="flex-1 h-px bg-black/10" />
+      </div>
 
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
         <ProjectCard
@@ -64,6 +70,7 @@ export function ProjectsSection() {
           subtitle={"Based on a book by Ernesto Sabato\nand music by Alfred Schittke"}
           bgColor="#f2f2f2"
           imageClassName="mix-blend-multiply"
+          objectPosition="center 30%"
         />
         <ProjectCard
           href="/projects/the-infamous-ramirez-hoffman"
@@ -71,6 +78,7 @@ export function ProjectsSection() {
           title="The Infamous Ramirez Hoffman"
           subtitle="Based on a novel by Roberto Bolaño"
           bgColor="#070605"
+          objectPosition="center 20%"
         />
       </div>
     </section>

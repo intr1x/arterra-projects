@@ -10,7 +10,7 @@ export function CtaSection() {
             src="/images/cta-bg.jpg"
             alt="Arterra Projects live performance"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(max-width: 1024px) 100vw, 55vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/80 lg:block hidden" />

@@ -59,10 +59,10 @@ interface ArtistCardProps {
 function ArtistCard({ artist, onClick }: ArtistCardProps) {
   return (
     <div
-      className="flex flex-col items-start group cursor-pointer"
+      className="flex flex-col items-start group cursor-pointer flex-1 sm:flex-initial min-w-0"
       onClick={onClick}
     >
-      <div className="relative w-[200px] lg:w-[241px] aspect-[3/4] rounded-lg overflow-hidden">
+      <div className="relative w-full sm:w-[200px] lg:w-[241px] aspect-[3/4] rounded-lg overflow-hidden">
         <Image
           src={artist.src}
           alt={artist.name}

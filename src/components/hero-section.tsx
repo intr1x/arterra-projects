@@ -10,8 +10,8 @@ export function HeroSection() {
   const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    if (!videoRef.current) return;
+    const el: HTMLVideoElement = videoRef.current;
 
     function onCanPlay() {
       setHasVideo(true);
@@ -20,10 +20,10 @@ export function HeroSection() {
       setHasVideo(false);
     }
 
-    video.addEventListener("canplaythrough", onCanPlay);
-    video.addEventListener("error", onError);
+    el.addEventListener("canplaythrough", onCanPlay);
+    el.addEventListener("error", onError);
 
-    if (video.readyState >= 4) setHasVideo(true);
+    if (el.readyState >= 4) setHasVideo(true);
 
     function broadcastMute(muted: boolean) {
       setIsMuted(muted);
@@ -34,21 +34,20 @@ export function HeroSection() {
 
     async function startPlayback() {
       try {
-        video.muted = false;
-        await video.play();
+        el.muted = false;
+        await el.play();
         broadcastMute(false);
       } catch {
-        video.muted = true;
+        el.muted = true;
         broadcastMute(true);
         try {
-          await video.play();
+          await el.play();
         } catch {
-          // even muted autoplay blocked — retry on first user interaction
           const resume = () => {
-            video.muted = false;
-            video.play().then(() => broadcastMute(false)).catch(() => {
-              video.muted = true;
-              video.play();
+            el.muted = false;
+            el.play().then(() => broadcastMute(false)).catch(() => {
+              el.muted = true;
+              el.play();
               broadcastMute(true);
             });
             document.removeEventListener("click", resume);
@@ -63,8 +62,8 @@ export function HeroSection() {
     startPlayback();
 
     return () => {
-      video.removeEventListener("canplaythrough", onCanPlay);
-      video.removeEventListener("error", onError);
+      el.removeEventListener("canplaythrough", onCanPlay);
+      el.removeEventListener("error", onError);
     };
   }, []);
 

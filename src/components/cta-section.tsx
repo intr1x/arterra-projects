@@ -6,7 +6,7 @@ export function CtaSection() {
       <div className="flex flex-col md:flex-row gap-4 lg:gap-6">
         <div className="relative w-full md:w-1/2 aspect-[16/9] overflow-hidden">
           <Image
-            src="/images/Rectangle 3.png"
+            src="/images/Rectangle 3.webp"
             alt="Anastasya Terenkova performing on piano"
             fill
             className="object-cover"
@@ -15,7 +15,7 @@ export function CtaSection() {
         </div>
         <div className="relative w-full md:w-1/2 aspect-[16/9] overflow-hidden">
           <Image
-            src="/images/Rectangle 4.png"
+            src="/images/Rectangle 4.webp"
             alt="John Malkovich on stage"
             fill
             className="object-cover"

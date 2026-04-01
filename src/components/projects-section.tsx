@@ -112,7 +112,7 @@ export function ProjectsSection() {
 
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
         <ProjectCard
-          src="/images/project-rob.png"
+          src="/images/project-rob.webp"
           title="Report On The Blind"
           subtitle={`Text - Ernesto Sabato - "On Heroes and Tombs"\nMusic - Alfred Schnittke - "Concerto for piano and strings"`}
           bgColor="#EDDBD7"
@@ -123,7 +123,7 @@ export function ProjectsSection() {
         />
         <ProjectCard
           href="/projects/the-infamous-ramirez-hoffman"
-          src="/images/project-irh.png"
+          src="/images/project-irh.webp"
           title="The Infamous Ramirez Hoffman"
           subtitle={`Based on a novel by Roberto Bolaño\nMusic by Astor Piazzolla, Alfred Schnittke, Leonid Desyatnikov,\nJohann Paul von Westhoff, Alberto Iglesias, The Doors,\nMax Richter, Giovanni Sollima`}
           bgColor="#070605"

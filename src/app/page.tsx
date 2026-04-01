@@ -16,7 +16,7 @@ export default function Home() {
       <CtaSection />
       <div className="relative w-full aspect-[21/9] bg-black">
         <Image
-          src="/images/IRH stills_2.28.6 4.png"
+          src="/images/IRH stills_2.28.6 4.webp"
           alt="Performance still"
           fill
           className="object-cover"

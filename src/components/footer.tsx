@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="reveal-footer bg-dark text-white relative overflow-hidden h-[600px] lg:h-[768px]">
       <div className="absolute inset-0">
         <Image
-          src="/images/L1002783-Edit copy-3 7.png"
+          src="/images/L1002783-Edit copy-3 7.webp"
           alt=""
           fill
           className="object-cover object-bottom"

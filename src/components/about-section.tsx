@@ -18,7 +18,7 @@ const ARTISTS: ArtistBio[] = [
   {
     name: "Anastasya Terenkova",
     role: "Co-founder, pianist",
-    src: "/images/artist-terenkova.png",
+    src: "/images/artist-terenkova.webp",
     quote: "\u00BB A ravishing pianist. \u00AB",
     quoteSource: "Diapason",
     sections: [
@@ -35,7 +35,7 @@ const ARTISTS: ArtistBio[] = [
   {
     name: "John Malkovich",
     role: "Co-founder, narrator",
-    src: "/images/artist-malkovich.jpg",
+    src: "/images/artist-malkovich.webp",
     quote: "\u00BB One of the most original actors of his generation. \u00AB",
     quoteSource: "The New York Times",
     sections: [

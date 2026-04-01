@@ -77,7 +77,7 @@ export function HeroSection() {
         muted
         loop
         playsInline
-        poster="/images/artist-malkovich.jpg"
+        poster="/images/artist-malkovich.webp"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
           hasVideo ? "opacity-100" : "opacity-0"
         }`}
@@ -87,7 +87,7 @@ export function HeroSection() {
 
       {/* Fallback poster image */}
       <Image
-        src="/images/artist-malkovich.jpg"
+        src="/images/artist-malkovich.webp"
         alt=""
         fill
         className={`object-cover object-[center_20%] transition-opacity duration-1000 ${

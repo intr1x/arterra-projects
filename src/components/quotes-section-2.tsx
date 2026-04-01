@@ -36,7 +36,7 @@ export function QuotesSection2() {
     <section className="bg-white px-6 md:px-10 lg:px-20 py-16 lg:py-28">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
         <QuoteCard
-          avatar="/images/avatar-malkovich.png"
+          avatar="/images/avatar-malkovich.webp"
           author="John Malkovich"
         >
           <p>
@@ -49,7 +49,7 @@ export function QuotesSection2() {
           </p>
         </QuoteCard>
         <QuoteCard
-          avatar="/images/avatar-terenkova.png"
+          avatar="/images/avatar-terenkova.webp"
           author="Anastasya Terenkova"
         >
           <p>

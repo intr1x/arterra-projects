@@ -54,16 +54,16 @@ function ProjectCard({
         />
       )}
 
-      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center px-6 lg:px-12 h-[230px] pb-[40px]">
+      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center px-4 lg:px-12 pb-5 lg:pb-[40px] gap-3 lg:gap-0 lg:h-[230px]">
         <div className="text-center w-full shrink-0">
-          <p className="text-white font-bold text-[22px] lg:text-[32px] leading-[1.4]">
+          <p className="text-white font-bold text-[20px] lg:text-[32px] leading-[1.3]">
             {title}
           </p>
-          <p className="text-white/50 text-[12px] lg:text-[15px] font-medium leading-[1.2] whitespace-pre-line mt-[10px]">
+          <p className="text-white/50 text-[11px] lg:text-[15px] font-medium leading-[1.3] whitespace-pre-line mt-1.5 lg:mt-[10px]">
             {subtitle}
           </p>
         </div>
-        <div className="flex-1 min-h-0" />
+        <div className="hidden lg:block flex-1 min-h-0" />
         {showButton && (
           <span
             role="button"

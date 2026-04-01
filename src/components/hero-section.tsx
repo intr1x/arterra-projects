@@ -32,30 +32,49 @@ export function HeroSection() {
       );
     }
 
+    function enableSoundOnInteraction() {
+      const unmute = () => {
+        el.muted = false;
+        broadcastMute(false);
+        document.removeEventListener("click", unmute);
+        document.removeEventListener("touchstart", unmute);
+        document.removeEventListener("keydown", unmute);
+      };
+      document.addEventListener("click", unmute, { once: true });
+      document.addEventListener("touchstart", unmute, { once: true });
+      document.addEventListener("keydown", unmute, { once: true });
+    }
+
     async function startPlayback() {
+      // Step 1: try unmuted play (works in Chrome if MEI is high enough)
       try {
         el.muted = false;
         await el.play();
         broadcastMute(false);
+        return;
+      } catch { /* blocked — expected on most browsers */ }
+
+      // Step 2: muted autoplay (works everywhere with HTML muted attr)
+      el.muted = true;
+      broadcastMute(true);
+      try {
+        await el.play();
+        enableSoundOnInteraction();
       } catch {
-        el.muted = true;
-        broadcastMute(true);
-        try {
-          await el.play();
-        } catch {
-          const resume = () => {
-            el.muted = false;
-            el.play().then(() => broadcastMute(false)).catch(() => {
-              el.muted = true;
-              el.play();
-              broadcastMute(true);
-            });
-            document.removeEventListener("click", resume);
-            document.removeEventListener("touchstart", resume);
-          };
-          document.addEventListener("click", resume, { once: true });
-          document.addEventListener("touchstart", resume, { once: true });
-        }
+        // Step 3: even muted blocked (rare) — start on first interaction
+        const resume = () => {
+          el.muted = false;
+          el.play().then(() => broadcastMute(false)).catch(() => {
+            el.muted = true;
+            el.play();
+            broadcastMute(true);
+            enableSoundOnInteraction();
+          });
+          document.removeEventListener("click", resume);
+          document.removeEventListener("touchstart", resume);
+        };
+        document.addEventListener("click", resume, { once: true });
+        document.addEventListener("touchstart", resume, { once: true });
       }
     }
 
@@ -90,6 +109,8 @@ export function HeroSection() {
       {/* Video background */}
       <video
         ref={videoRef}
+        autoPlay
+        muted
         loop
         playsInline
         preload="auto"

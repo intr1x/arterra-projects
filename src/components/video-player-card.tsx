@@ -129,10 +129,12 @@ export function VideoPlayerCard({ videoRef }: VideoPlayerCardProps) {
       </div>
 
       {/* Description */}
-      <p className="text-off-white text-sm leading-[1.2] opacity-80">
+      <p className="text-off-white text-sm leading-[1.2] opacity-80 ml-[38px]">
+        Report on the Blind
+        <br />
         John Malkovich &amp; Anastasya Terenkova
         <br />
-        Rehearsal at Théâtre de Paris (Paris), August 2023
+        Festival Les Atheneennes
       </p>
     </div>
   );

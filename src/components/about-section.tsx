@@ -17,8 +17,8 @@ interface ArtistBio {
 const ARTISTS: ArtistBio[] = [
   {
     name: "Anastasya Terenkova",
-    role: "Co-founder and pianist",
-    src: "/images/artist-terenkova.jpg",
+    role: "Co-founder, pianist",
+    src: "/images/artist-terenkova.png",
     quote: "\u00BB A ravishing pianist. \u00AB",
     quoteSource: "Diapason",
     sections: [
@@ -34,7 +34,7 @@ const ARTISTS: ArtistBio[] = [
   },
   {
     name: "John Malkovich",
-    role: "Co-founder and narrator",
+    role: "Co-founder, narrator",
     src: "/images/artist-malkovich.jpg",
     quote: "\u00BB One of the most original actors of his generation. \u00AB",
     quoteSource: "The New York Times",
@@ -71,7 +71,7 @@ function ArtistCard({ artist, onClick }: ArtistCardProps) {
           sizes="241px"
         />
       </div>
-      <div className="pt-3">
+      <div className="pt-3 pl-2">
         <p className="text-xl lg:text-2xl leading-[1.4] text-black">
           {artist.name}
         </p>
@@ -90,6 +90,11 @@ interface ArtistDrawerProps {
 
 function ArtistDrawer({ artist, onClose }: ArtistDrawerProps) {
   const isOpen = artist !== null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -193,7 +198,7 @@ function ArtistDrawer({ artist, onClose }: ArtistDrawerProps) {
     </>
   );
 
-  if (typeof document === "undefined") return null;
+  if (!mounted) return null;
   return createPortal(drawerContent, document.body);
 }
 
@@ -204,7 +209,7 @@ export function AboutSection() {
     <>
       <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
         <div className="flex items-center gap-4 mb-10 lg:mb-14">
-          <p className="font-medium text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-black shrink-0">
+          <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
             About Us
           </p>
           <div className="flex-1 h-px bg-black/10" />
@@ -221,26 +226,29 @@ export function AboutSection() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-10 lg:gap-0 lg:justify-between lg:min-h-[500px] max-w-[703px]">
-            <p className="text-[32px] lg:text-5xl leading-[1.15] text-black tracking-[-0.01em]">
-              Arterra Projects is an artist collective by actor John Malkovich
-              and pianist Anastasya Terenkova.
+          <div className="flex flex-col gap-8 lg:gap-10 max-w-[717px] justify-start">
+            <p className="text-[24px] sm:text-[30px] lg:text-[38px] font-bold leading-[1.21] text-[#3E3E3E]">
+              Arterra Projects{" "}
+              <span className="font-normal">
+                is an artist collective founded by two creative partners -
+                pianist{" "}
+              </span>
+              <span className="text-[#9A7145]">Anastasya Terenkova</span>{" "}
+              <span className="font-normal">and acclaimed actor </span>
+              <span className="text-[#9A7145]">John Malkovich</span>{" "}
+              <span className="font-normal">
+                - to support and promote their collaborative work.
+              </span>
             </p>
 
-            <p className="text-base lg:text-lg leading-[1.5] text-black/80 tracking-[0.01em] max-w-[378px]">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est.
-            </p>
-
+            {/* TODO: вернуть кнопку когда будет готов дизайн About
             <Link
               href="/about"
-              className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-cream text-gold text-base backdrop-blur-[14px] hover:bg-gold hover:text-white transition-colors duration-300 w-fit"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-cream text-gold text-sm font-bold backdrop-blur-[14px] hover:bg-gold hover:text-white transition-colors duration-300 w-fit"
             >
               More About Us
             </Link>
+            */}
           </div>
         </div>
       </section>

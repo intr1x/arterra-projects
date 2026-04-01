@@ -1,33 +1,41 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export function CtaSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 pb-12 lg:pb-20">
-      <div className="relative w-full h-[350px] md:h-[450px] lg:h-[557px] rounded-lg overflow-hidden bg-black">
-        <div className="absolute left-0 top-0 w-full lg:w-[55%] h-full">
+    <section className="bg-white">
+      <div className="flex flex-col md:flex-row gap-4 lg:gap-6">
+        <div className="relative w-full md:w-1/2 aspect-[16/9] overflow-hidden">
           <Image
-            src="/images/cta-bg.jpg"
-            alt="Arterra Projects live performance"
+            src="/images/Rectangle 3.png"
+            alt="Anastasya Terenkova performing on piano"
             fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 55vw"
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/80 lg:block hidden" />
-          <div className="absolute inset-0 bg-black/40 lg:hidden" />
         </div>
+        <div className="relative w-full md:w-1/2 aspect-[16/9] overflow-hidden">
+          <Image
+            src="/images/Rectangle 4.png"
+            alt="John Malkovich on stage"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      </div>
 
-        <div className="relative lg:absolute lg:right-20 lg:top-1/2 lg:-translate-y-1/2 flex flex-col gap-6 p-8 lg:p-0 max-w-[426px] h-full lg:h-auto justify-center lg:justify-start">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl leading-[1.3] text-white tracking-[-0.01em]">
-            Experience Arterra Projects live
-          </h2>
-          <Link
-            href="/tour-dates"
-            className="inline-flex items-center justify-center px-6 py-2 rounded-3xl bg-gold text-white text-base hover:bg-gold/80 transition-colors w-fit"
-          >
-            Upcoming Tour Dates
-          </Link>
+      <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-10 py-12 lg:py-20 px-6 md:px-10 lg:pl-[300px] lg:pr-20">
+        <div className="flex items-center gap-6 lg:gap-8 shrink-0">
+          <h3 className="text-[36px] lg:text-[61px] font-bold leading-[0.9] text-[#3E3E3E]">
+            Arterra<br />Project
+          </h3>
+          <div className="w-px self-stretch bg-black/15" />
         </div>
+        <p className="text-[18px] lg:text-[27px] font-light leading-[1.3] text-[#3E3E3E] max-w-[776px]">
+          embodies their philosophy of artistic collaboration as a living form
+          and exists to nurture their exploration of the synthesis of literature,
+          theater, and classical music.
+        </p>
       </div>
     </section>
   );

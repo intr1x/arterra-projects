@@ -5,14 +5,11 @@ import { useEffect, useState, useCallback } from "react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects/report-on-the-blind", label: "Report On The Blind" },
-  {
-    href: "/projects/the-infamous-ramirez-hoffman",
-    label: "The Infamous Ramirez Hoffman",
-  },
-  { href: "/tour-dates", label: "Tour Dates" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About", disabled: true },
+  { href: "/projects/report-on-the-blind", label: "Report On The Blind", disabled: true },
+  { href: "/projects/the-infamous-ramirez-hoffman", label: "The Infamous Ramirez Hoffman" },
+  { href: "/tour-dates", label: "Tour Dates", disabled: true },
+  { href: "/contact", label: "Contact", disabled: true },
 ];
 
 export function Menu() {
@@ -63,23 +60,43 @@ export function Menu() {
             <p className="text-gold text-sm lg:text-base font-medium uppercase tracking-wider mb-2">
               Navigation
             </p>
-            {NAV_LINKS.map((link, i) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`text-white text-[28px] lg:text-[56px] leading-[1.15] hover:text-gold transition-all duration-400 ${
-                  isOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-5"
-                }`}
-                style={{
-                  transitionDelay: isOpen ? `${80 + i * 50}ms` : "0ms",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link, i) => {
+              if (link.disabled) {
+                return (
+                  <span
+                    key={link.href}
+                    className={`text-white/30 text-[28px] lg:text-[56px] leading-[1.15] cursor-default transition-all duration-400 ${
+                      isOpen
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-5"
+                    }`}
+                    style={{
+                      transitionDelay: isOpen ? `${80 + i * 50}ms` : "0ms",
+                    }}
+                  >
+                    {link.label}
+                  </span>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-white text-[28px] lg:text-[56px] leading-[1.15] hover:text-gold transition-all duration-400 ${
+                    isOpen
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  }`}
+                  style={{
+                    transitionDelay: isOpen ? `${80 + i * 50}ms` : "0ms",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div

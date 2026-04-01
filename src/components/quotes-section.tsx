@@ -24,10 +24,10 @@ function Quote({ avatar, quote, author, align = "left" }: QuoteProps) {
         />
       </div>
       <div className="flex flex-col gap-6 lg:gap-10">
-        <p className="text-xl lg:text-[32px] leading-[1.2] text-dark-alt">
+        <p className="text-lg lg:text-[25px] font-medium leading-[1.25] text-dark-alt">
           {quote}
         </p>
-        <p className="text-lg lg:text-[28px] leading-none text-dark-alt/40">
+        <p className="text-base lg:text-[21px] font-bold leading-none text-dark-alt/40">
           {author}
         </p>
       </div>
@@ -39,13 +39,13 @@ export function QuotesSection() {
   return (
     <section className="bg-white px-6 md:px-10 lg:px-20 py-16 lg:py-28 flex flex-col gap-16 lg:gap-24">
       <Quote
-        avatar="/images/artist-malkovich.jpg"
+        avatar="/images/avatar-malkovich.png"
         quote={`\u201cI find the combination of story, text, and live music \u2013 almost always classical \u2013 is a powerful, fascinating and under-explored medium.\u201d`}
         author="John Malkovich"
         align="left"
       />
       <Quote
-        avatar="/images/artist-terenkova.jpg"
+        avatar="/images/avatar-terenkova.png"
         quote={`\u201cThe synthesis of music and text takes us beyond the field of consciousness. Music always draws us into a dialogue, which ultimately becomes a conversation with ourselves.\u201d`}
         author="Anastasya Terenkova"
         align="right"

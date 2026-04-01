@@ -41,7 +41,7 @@ export function QuotesSection2() {
         >
           <p>
             &raquo; There is something truthful about music that life can
-            replicate. <strong>Music is a higher truth.</strong> I was just
+            replicate. <strong className="text-gold">Music is a higher truth.</strong> I was just
             fascinated by the various ways in which music could be used and what
             sort of text fills in the gaps in music. It&apos;s possible in my
             mind that the two together can create something very strong and

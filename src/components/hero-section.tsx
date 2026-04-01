@@ -20,32 +20,50 @@ export function HeroSection() {
       setHasVideo(false);
     }
 
-    video.addEventListener("canplay", onCanPlay);
+    video.addEventListener("canplaythrough", onCanPlay);
     video.addEventListener("error", onError);
 
-    // Try to autoplay with sound; browsers may block it — fall back to muted
-    video.muted = false;
-    const playPromise = video.play();
-    if (playPromise) {
-      playPromise
-        .then(() => {
-          setIsMuted(false);
-          window.dispatchEvent(
-            new CustomEvent("mute-change", { detail: { muted: false } }),
-          );
-        })
-        .catch(() => {
-          video.muted = true;
-          setIsMuted(true);
-          window.dispatchEvent(
-            new CustomEvent("mute-change", { detail: { muted: true } }),
-          );
-          video.play();
-        });
+    if (video.readyState >= 4) setHasVideo(true);
+
+    function broadcastMute(muted: boolean) {
+      setIsMuted(muted);
+      window.dispatchEvent(
+        new CustomEvent("mute-change", { detail: { muted } }),
+      );
     }
 
+    async function startPlayback() {
+      try {
+        video.muted = false;
+        await video.play();
+        broadcastMute(false);
+      } catch {
+        video.muted = true;
+        broadcastMute(true);
+        try {
+          await video.play();
+        } catch {
+          // even muted autoplay blocked — retry on first user interaction
+          const resume = () => {
+            video.muted = false;
+            video.play().then(() => broadcastMute(false)).catch(() => {
+              video.muted = true;
+              video.play();
+              broadcastMute(true);
+            });
+            document.removeEventListener("click", resume);
+            document.removeEventListener("touchstart", resume);
+          };
+          document.addEventListener("click", resume, { once: true });
+          document.addEventListener("touchstart", resume, { once: true });
+        }
+      }
+    }
+
+    startPlayback();
+
     return () => {
-      video.removeEventListener("canplay", onCanPlay);
+      video.removeEventListener("canplaythrough", onCanPlay);
       video.removeEventListener("error", onError);
     };
   }, []);
@@ -73,10 +91,9 @@ export function HeroSection() {
       {/* Video background */}
       <video
         ref={videoRef}
-        autoPlay
-        muted
         loop
         playsInline
+        preload="auto"
         poster="/images/artist-malkovich.webp"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
           hasVideo ? "opacity-100" : "opacity-0"

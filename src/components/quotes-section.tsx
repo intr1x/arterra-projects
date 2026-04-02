@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ScrollReveal } from "./scroll-reveal";
 
 interface QuoteProps {
   avatar: string;
@@ -9,29 +10,31 @@ interface QuoteProps {
 
 function Quote({ avatar, quote, author, align = "left" }: QuoteProps) {
   return (
-    <div
-      className={`flex gap-8 lg:gap-16 items-start max-w-[700px] ${
-        align === "right" ? "lg:ml-auto" : ""
-      }`}
-    >
-      <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shrink-0 bg-white">
-        <Image
-          src={avatar}
-          alt={author}
-          fill
-          className="object-cover object-top"
-          sizes="64px"
-        />
+    <ScrollReveal variant={align === "right" ? "fade-left" : "fade-right"} duration={900}>
+      <div
+        className={`flex gap-8 lg:gap-16 items-start max-w-[700px] ${
+          align === "right" ? "lg:ml-auto" : ""
+        }`}
+      >
+        <div className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shrink-0 bg-white">
+          <Image
+            src={avatar}
+            alt={author}
+            fill
+            className="object-cover object-top"
+            sizes="64px"
+          />
+        </div>
+        <div className="flex flex-col gap-6 lg:gap-10">
+          <p className="text-lg lg:text-[25px] font-medium leading-[1.25] text-dark-alt">
+            {quote}
+          </p>
+          <p className="text-base lg:text-[21px] font-bold leading-none text-dark-alt/40">
+            {author}
+          </p>
+        </div>
       </div>
-      <div className="flex flex-col gap-6 lg:gap-10">
-        <p className="text-lg lg:text-[25px] font-medium leading-[1.25] text-dark-alt">
-          {quote}
-        </p>
-        <p className="text-base lg:text-[21px] font-bold leading-none text-dark-alt/40">
-          {author}
-        </p>
-      </div>
-    </div>
+    </ScrollReveal>
   );
 }
 

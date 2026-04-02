@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { RevealGroup } from "./scroll-reveal";
 
 interface QuoteCardProps {
   avatar: string;
@@ -34,7 +35,7 @@ function QuoteCard({ avatar, children, author }: QuoteCardProps) {
 export function QuotesSection2() {
   return (
     <section className="bg-white px-6 md:px-10 lg:px-20 py-16 lg:py-28">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <RevealGroup className="flex flex-col lg:flex-row gap-12 lg:gap-16" stagger={200} variant="fade-up">
         <QuoteCard
           avatar="/images/avatar-malkovich.webp"
           author="John Malkovich"
@@ -58,7 +59,7 @@ export function QuotesSection2() {
             unspeakable, sometimes intimidating strength. &laquo;
           </p>
         </QuoteCard>
-      </div>
+      </RevealGroup>
     </section>
   );
 }

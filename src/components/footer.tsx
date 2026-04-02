@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { RevealGroup } from "./scroll-reveal";
 
 export function Footer() {
   return (
@@ -14,12 +15,13 @@ export function Footer() {
         />
       </div>
 
-      <div className="absolute inset-x-0 top-0 h-[55%] bg-gradient-to-b from-dark via-dark/90 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-[75%] bg-gradient-to-b from-dark via-dark/80 via-60% to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-dark/80 to-transparent" />
 
       <div className="relative z-10 px-6 md:px-10 lg:px-20 pt-12 lg:pt-[160px]">
-        <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-20 sm:justify-end">
+        <RevealGroup className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-20 sm:justify-end" stagger={150} variant="fade-up">
           <div className="flex flex-col gap-4">
-            <p className="text-sm font-medium text-gold leading-[0.9]">
+            <p className="text-lg font-bold text-[#A2784B] leading-none">
               Navigation
             </p>
             <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
@@ -31,7 +33,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-sm font-medium text-gold leading-[0.9]">
+            <p className="text-lg font-bold text-[#A2784B] leading-none">
               Artists
             </p>
             <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
@@ -41,7 +43,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="text-sm font-medium text-gold leading-[0.9]">
+            <p className="text-lg font-bold text-[#A2784B] leading-none">
               Projects
             </p>
             <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
@@ -51,7 +53,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
-        </div>
+        </RevealGroup>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-10 lg:px-20 pb-8">

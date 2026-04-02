@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { ScrollReveal, RevealGroup } from "./scroll-reveal";
 
 interface ArtistBio {
   name: string;
@@ -208,15 +209,17 @@ export function AboutSection() {
   return (
     <>
       <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
-        <div className="flex items-center gap-4 mb-10 lg:mb-14">
-          <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
-            About Us
-          </p>
-          <div className="flex-1 h-px bg-black/10" />
-        </div>
+        <ScrollReveal variant="fade-up" duration={700}>
+          <div className="flex items-center gap-4 mb-10 lg:mb-14">
+            <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
+              About Us
+            </p>
+            <div className="flex-1 h-px bg-black/20" />
+          </div>
+        </ScrollReveal>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-          <div className="flex flex-row gap-4 lg:gap-6 shrink-0">
+          <RevealGroup className="flex flex-row gap-4 lg:gap-6 shrink-0" stagger={150} variant="fade-up">
             {ARTISTS.map((artist) => (
               <ArtistCard
                 key={artist.name}
@@ -224,9 +227,9 @@ export function AboutSection() {
                 onClick={() => setSelectedArtist(artist)}
               />
             ))}
-          </div>
+          </RevealGroup>
 
-          <div className="flex flex-col gap-8 lg:gap-10 max-w-[717px] justify-start">
+          <ScrollReveal variant="fade-up" delay={200} className="flex flex-col gap-8 lg:gap-10 max-w-[717px] justify-start">
             <p className="text-[24px] sm:text-[30px] lg:text-[38px] font-bold leading-[1.21] text-[#3E3E3E]">
               Arterra Projects{" "}
               <span className="font-normal">
@@ -249,7 +252,7 @@ export function AboutSection() {
               More About Us
             </Link>
             */}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

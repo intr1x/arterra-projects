@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal, RevealGroup } from "./scroll-reveal";
 
 interface ProjectCardProps {
   href?: string;
@@ -103,14 +104,16 @@ function ProjectCard({
 export function ProjectsSection() {
   return (
     <section className="bg-white px-6 md:px-10 lg:px-20 pt-12 lg:pt-20">
-      <div className="flex items-center gap-4 mb-6 lg:mb-10">
-        <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
-          Projects
-        </p>
-        <div className="flex-1 h-px bg-black/10" />
-      </div>
+      <ScrollReveal variant="fade-up" duration={700}>
+        <div className="flex items-center gap-4 mb-6 lg:mb-10">
+          <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
+            Projects
+          </p>
+          <div className="flex-1 h-px bg-black/20" />
+        </div>
+      </ScrollReveal>
 
-      <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6">
+      <RevealGroup className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6" stagger={200} variant="fade-up">
         <ProjectCard
           src="/images/project-rob.webp"
           title="Report On The Blind"
@@ -130,7 +133,7 @@ export function ProjectsSection() {
           gradient
           objectPosition="center 20%"
         />
-      </div>
+      </RevealGroup>
     </section>
   );
 }

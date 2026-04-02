@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useEffect, useState, useCallback } from "react";
 import { VideoPlayerCard } from "./video-player-card";
+import { ScrollReveal } from "./scroll-reveal";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -157,22 +158,28 @@ export function HeroSection() {
       {/* Content */}
       <div className="absolute bottom-12 lg:bottom-20 left-6 md:left-10 lg:left-20 right-6 md:right-10 lg:right-20 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
         <div className="flex flex-col gap-10 lg:gap-[100px] max-w-[800px]">
-          <p className="text-gold text-[22px] sm:text-[28px] lg:text-[35px] font-bold leading-[0.9] tracking-[-0.02em]">
-            John Malkovich
-            <br />
-            <span className="lowercase">&amp;</span> Anastasya Terenkova
-          </p>
-          <h1 className="text-white text-[40px] sm:text-[60px] lg:text-[90px] font-bold leading-[0.9] tracking-[-0.02em]">
-            <span className="uppercase">F</span>antastic{" "}
-            <em className="italic">fusion</em>
-            <br />
-            of literature
-            <br />
-            and music
-          </h1>
+          <ScrollReveal variant="fade-up" delay={300} duration={1000}>
+            <p className="text-gold text-[22px] sm:text-[28px] lg:text-[35px] font-bold leading-[0.9] tracking-[-0.02em]">
+              John Malkovich
+              <br />
+              <span className="lowercase">&amp;</span> Anastasya Terenkova
+            </p>
+          </ScrollReveal>
+          <ScrollReveal variant="fade-up" delay={600} duration={1100}>
+            <h1 className="text-white text-[40px] sm:text-[60px] lg:text-[90px] font-bold leading-[0.9] tracking-[-0.02em]">
+              <span className="uppercase">F</span>antastic{" "}
+              <em className="italic">fusion</em>
+              <br />
+              of literature
+              <br />
+              and music
+            </h1>
+          </ScrollReveal>
         </div>
 
-        <VideoPlayerCard videoRef={videoRef} />
+        <ScrollReveal variant="fade-up" delay={800} duration={1000}>
+          <VideoPlayerCard videoRef={videoRef} />
+        </ScrollReveal>
       </div>
     </section>
   );

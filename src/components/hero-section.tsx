@@ -120,7 +120,7 @@ export function HeroSection() {
           hasVideo ? "opacity-100" : "opacity-0"
         }`}
       >
-        <source src="/videos/5th Horizontal (Fragment from 1st) v1.mp4" type="video/mp4" />
+        <source src="/videos/hero-main.mp4" type="video/mp4" />
       </video>
 
       {/* Fallback poster image */}

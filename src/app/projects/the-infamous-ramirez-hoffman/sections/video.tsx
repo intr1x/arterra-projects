@@ -71,7 +71,17 @@ export function VideoSection() {
         </button>
 
         <div className="absolute bottom-4 lg:bottom-5 2xl:bottom-6 left-4 lg:left-5 2xl:left-6 z-10">
-          <VideoPlayerCard videoRef={videoRef} compact />
+          <VideoPlayerCard
+            videoRef={videoRef}
+            compact
+            caption={
+              <>
+                The Infamous Ramirez Hoffman
+                <br />
+                at the House of Music, Budapest
+              </>
+            }
+          />
         </div>
       </div>
       </div>

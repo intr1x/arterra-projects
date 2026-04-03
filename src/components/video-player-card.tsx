@@ -5,6 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 interface VideoPlayerCardProps {
   videoRef: React.RefObject<HTMLVideoElement | null>;
   compact?: boolean;
+  title?: string;
+  caption?: React.ReactNode;
 }
 
 function formatTime(seconds: number): string {
@@ -13,7 +15,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export function VideoPlayerCard({ videoRef, compact = false }: VideoPlayerCardProps) {
+export function VideoPlayerCard({ videoRef, compact = false, title, caption }: VideoPlayerCardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(46);
@@ -107,7 +109,7 @@ export function VideoPlayerCard({ videoRef, compact = false }: VideoPlayerCardPr
           <span className={`font-medium text-off-white leading-[1.1] ${
             compact ? "text-xs lg:text-xs 2xl:text-sm" : "text-sm"
           }`}>
-            Behind the Scenes
+            {title ?? "Behind the Scenes"}
           </span>
         </div>
         <span className={`font-medium text-off-white leading-[1.1] tabular-nums ${
@@ -137,11 +139,15 @@ export function VideoPlayerCard({ videoRef, compact = false }: VideoPlayerCardPr
       <p className={`text-off-white leading-[1.2] opacity-80 ml-[38px] ${
         compact ? "hidden lg:block text-[10px] lg:text-[11px] 2xl:text-xs" : "text-xs"
       }`}>
-        Report on the Blind
-        <br />
-        John Malkovich &amp; Anastasya Terenkova
-        <br />
-        Festival Les Atheneennes
+        {caption ?? (
+          <>
+            Report on the Blind
+            <br />
+            John Malkovich &amp; Anastasya Terenkova
+            <br />
+            Festival Les Atheneennes
+          </>
+        )}
       </p>
     </div>
   );

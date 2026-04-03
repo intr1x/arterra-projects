@@ -141,7 +141,7 @@ export function HeroSection() {
       {/* Mute/unmute button — top-left */}
       <button
         onClick={toggleMute}
-        className="absolute top-8 lg:top-14 left-6 md:left-10 lg:left-20 z-50 w-8 h-8 flex items-center justify-center text-white hover:text-white/70 transition-colors cursor-pointer"
+        className="absolute top-8 lg:top-10 2xl:top-14 left-6 md:left-10 lg:left-12 2xl:left-20 z-50 w-8 h-8 flex items-center justify-center text-white hover:text-white/70 transition-colors cursor-pointer"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
@@ -156,17 +156,17 @@ export function HeroSection() {
       </button>
 
       {/* Content */}
-      <div className="absolute bottom-12 lg:bottom-20 left-6 md:left-10 lg:left-20 right-6 md:right-10 lg:right-20 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
-        <div className="flex flex-col gap-10 lg:gap-[100px] max-w-[800px]">
+      <div className="absolute bottom-12 lg:bottom-14 2xl:bottom-20 left-6 md:left-10 lg:left-12 2xl:left-20 right-6 md:right-10 lg:right-12 2xl:right-20 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
+        <div className="flex flex-col gap-10 lg:gap-[60px] 2xl:gap-[100px] max-w-[800px]">
           <ScrollReveal variant="fade-up" delay={300} duration={1000}>
-            <p className="text-gold text-[22px] sm:text-[28px] lg:text-[35px] font-bold leading-[0.9] tracking-[-0.02em]">
+            <p className="text-gold text-[22px] sm:text-[28px] lg:text-[28px] 2xl:text-[35px] font-bold leading-[0.9] tracking-[-0.02em]">
               John Malkovich
               <br />
               <span className="lowercase">&amp;</span> Anastasya Terenkova
             </p>
           </ScrollReveal>
           <ScrollReveal variant="fade-up" delay={600} duration={1100}>
-            <h1 className="text-white text-[40px] sm:text-[60px] lg:text-[90px] font-bold leading-[0.9] tracking-[-0.02em]">
+            <h1 className="text-white text-[40px] sm:text-[60px] lg:text-[66px] 2xl:text-[90px] font-bold leading-[0.9] tracking-[-0.02em]">
               <span className="uppercase">F</span>antastic{" "}
               <em className="italic">fusion</em>
               <br />

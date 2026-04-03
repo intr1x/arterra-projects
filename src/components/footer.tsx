@@ -4,7 +4,7 @@ import { RevealGroup } from "./scroll-reveal";
 
 export function Footer() {
   return (
-    <footer className="reveal-footer bg-dark text-white relative overflow-hidden h-[600px] lg:h-[768px]">
+    <footer className="reveal-footer bg-dark text-white relative overflow-hidden h-[600px] lg:h-[640px] 2xl:h-[768px]">
       <div className="absolute inset-0">
         <Image
           src="/images/L1002783-Edit copy-3 7.webp"
@@ -18,13 +18,13 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-[75%] bg-gradient-to-b from-dark via-dark/80 via-60% to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-dark/80 to-transparent" />
 
-      <div className="relative z-10 px-6 md:px-10 lg:px-20 pt-12 lg:pt-[160px]">
-        <RevealGroup className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-20 sm:justify-end" stagger={150} variant="fade-up">
+      <div className="relative z-10 px-6 md:px-10 lg:px-12 2xl:px-20 pt-12 lg:pt-[100px] 2xl:pt-[160px]">
+        <RevealGroup className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-14 2xl:gap-20 sm:justify-end" stagger={150} variant="fade-up">
           <div className="flex flex-col gap-4">
             <p className="text-lg font-bold text-[#A2784B] leading-none">
               Navigation
             </p>
-            <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
+            <div className="text-base lg:text-base 2xl:text-lg leading-[1.4] text-white space-y-0.5">
               <Link href="/" className="block hover:text-gold transition-colors w-fit">Home</Link>
               <span className="block text-white/30 cursor-default">About</span>
               <span className="block text-white/30 cursor-default">Tour Dates</span>
@@ -36,7 +36,7 @@ export function Footer() {
             <p className="text-lg font-bold text-[#A2784B] leading-none">
               Artists
             </p>
-            <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
+            <div className="text-base lg:text-base 2xl:text-lg leading-[1.4] text-white space-y-0.5">
               <span className="block text-white/80">John Malkovich</span>
               <span className="block text-white/80">Anastasya Terenkova</span>
             </div>
@@ -46,7 +46,7 @@ export function Footer() {
             <p className="text-lg font-bold text-[#A2784B] leading-none">
               Projects
             </p>
-            <div className="text-base lg:text-lg leading-[1.4] text-white space-y-0.5">
+            <div className="text-base lg:text-base 2xl:text-lg leading-[1.4] text-white space-y-0.5">
               <span className="block text-white/30 cursor-default">Report On The Blind</span>
               <Link href="/projects/the-infamous-ramirez-hoffman" className="block hover:text-gold transition-colors w-fit">
                 The Infamous Ramirez Hoffman
@@ -56,10 +56,10 @@ export function Footer() {
         </RevealGroup>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-10 lg:px-20 pb-8">
+      <div className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-10 lg:px-12 2xl:px-20 pb-8">
         <div className="w-full h-px bg-white/10 mb-6" />
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm lg:text-base font-medium text-white/60">
+        <div className="flex items-end justify-between">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-xs sm:text-sm lg:text-sm 2xl:text-base font-medium text-white/60">
             <span>Arterra Projects &copy; 2026 All rights reserved</span>
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Legal Notice</Link>

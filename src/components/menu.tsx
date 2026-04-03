@@ -54,10 +54,10 @@ export function Menu() {
           : "opacity-0 invisible"
       }`}
     >
-      <div className="px-6 md:px-10 lg:px-20">
-        <div className="flex flex-col lg:flex-row lg:gap-32">
-          <nav className="flex flex-col gap-3 lg:gap-5 mb-12 lg:mb-0">
-            <p className="text-gold text-sm lg:text-base font-medium uppercase tracking-wider mb-2">
+      <div className="px-6 md:px-10 lg:px-12 2xl:px-20">
+        <div className="flex flex-col lg:flex-row lg:gap-20 2xl:gap-32">
+          <nav className="flex flex-col gap-3 lg:gap-4 2xl:gap-5 mb-12 lg:mb-0">
+            <p className="text-gold text-sm lg:text-sm 2xl:text-base font-medium uppercase tracking-wider mb-2">
               Navigation
             </p>
             {NAV_LINKS.map((link, i) => {
@@ -65,7 +65,7 @@ export function Menu() {
                 return (
                   <span
                     key={link.href}
-                    className={`text-white/30 text-[28px] lg:text-[56px] leading-[1.15] cursor-default transition-all duration-400 ${
+                    className={`text-white/30 text-[20px] sm:text-[28px] lg:text-[42px] 2xl:text-[56px] leading-[1.15] cursor-default transition-all duration-400 ${
                       isOpen
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-5"
@@ -84,7 +84,7 @@ export function Menu() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-white text-[28px] lg:text-[56px] leading-[1.15] hover:text-gold transition-all duration-400 ${
+                  className={`text-white text-[20px] sm:text-[28px] lg:text-[42px] 2xl:text-[56px] leading-[1.15] hover:text-gold transition-all duration-400 ${
                     isOpen
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-5"
@@ -100,15 +100,15 @@ export function Menu() {
           </nav>
 
           <div
-            className={`flex flex-col gap-8 lg:mt-8 transition-opacity duration-500 ${
+            className={`flex flex-col gap-8 lg:mt-6 2xl:mt-8 transition-opacity duration-500 ${
               isOpen ? "opacity-100 delay-400" : "opacity-0"
             }`}
           >
             <div>
-              <p className="text-gold text-sm lg:text-base font-medium uppercase tracking-wider mb-3">
+              <p className="text-gold text-sm lg:text-sm 2xl:text-base font-medium uppercase tracking-wider mb-3">
                 Artists
               </p>
-              <p className="text-white/80 text-base lg:text-xl leading-[1.4]">
+              <p className="text-white/80 text-base lg:text-lg 2xl:text-xl leading-[1.4]">
                 John Malkovich
                 <br />
                 Anastasya Terenkova
@@ -116,12 +116,12 @@ export function Menu() {
             </div>
 
             <div>
-              <p className="text-gold text-sm lg:text-base font-medium uppercase tracking-wider mb-3">
+              <p className="text-gold text-sm lg:text-sm 2xl:text-base font-medium uppercase tracking-wider mb-3">
                 Contact
               </p>
               <a
                 href="mailto:info@arterraprojects.com"
-                className="text-white/80 text-base lg:text-xl leading-[1.4] hover:text-white transition-colors"
+                className="text-white/80 text-base lg:text-lg 2xl:text-xl leading-[1.4] hover:text-white transition-colors"
               >
                 info@arterraprojects.com
               </a>

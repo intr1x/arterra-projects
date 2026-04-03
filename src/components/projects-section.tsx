@@ -30,7 +30,7 @@ function ProjectCard({
   objectPosition = "center",
 }: ProjectCardProps) {
   const cardClassName =
-    "relative block w-full lg:w-1/2 aspect-[772/923] rounded-lg overflow-hidden group";
+    "relative block w-full aspect-[772/923] rounded-lg overflow-hidden group";
 
   const inner = (
     <>
@@ -55,12 +55,12 @@ function ProjectCard({
         />
       )}
 
-      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center px-4 lg:px-12 pb-5 lg:pb-[40px] gap-3 lg:gap-0 lg:h-[230px]">
-        <div className="text-center w-full shrink-0">
-          <p className="text-white font-bold text-[20px] lg:text-[32px] leading-[1.3]">
+      <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center px-4 lg:px-8 2xl:px-12 pb-5 lg:pb-8 2xl:pb-[40px] gap-3 lg:gap-0 lg:h-[180px] 2xl:h-[230px]">
+        <div className="text-center max-w-[70%] lg:max-w-full shrink-0">
+          <p className="text-white font-bold text-[20px] lg:text-[26px] 2xl:text-[32px] leading-[1.3]">
             {title}
           </p>
-          <p className="text-white/50 text-[11px] lg:text-[15px] font-medium leading-[1.3] whitespace-pre-line mt-1.5 lg:mt-[10px]">
+          <p className="text-white/50 text-[11px] lg:text-[13px] 2xl:text-[15px] font-medium leading-[1.3] whitespace-normal lg:whitespace-pre-line mt-1.5 lg:mt-2 2xl:mt-[10px] mb-2 lg:mb-4 2xl:mb-0">
             {subtitle}
           </p>
         </div>
@@ -69,7 +69,7 @@ function ProjectCard({
           <span
             role="button"
             aria-disabled={buttonDisabled}
-            className={`shrink-0 inline-flex items-center justify-center px-6 py-2 rounded-3xl text-[13px] lg:text-[15px] font-medium ${
+            className={`shrink-0 inline-flex items-center justify-center px-6 py-2 rounded-3xl text-[13px] lg:text-[13px] 2xl:text-[15px] font-medium ${
               buttonDisabled
                 ? "cursor-not-allowed bg-neutral-500/80 text-white/90"
                 : "cursor-pointer bg-gold text-white hover:bg-gold/80 transition-colors"
@@ -103,17 +103,17 @@ function ProjectCard({
 
 export function ProjectsSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 pt-12 lg:pt-20">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 pt-12 lg:pt-14 2xl:pt-20">
       <ScrollReveal variant="fade-up" duration={700}>
-        <div className="flex items-center gap-4 mb-6 lg:mb-10">
-          <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
+        <div className="flex items-center gap-4 mb-6 lg:mb-8 2xl:mb-10">
+          <p className="font-bold text-lg lg:text-lg 2xl:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
             Projects
           </p>
           <div className="flex-1 h-px bg-black/20" />
         </div>
       </ScrollReveal>
 
-      <RevealGroup className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6" stagger={200} variant="fade-up">
+      <RevealGroup className="flex flex-col lg:flex-row items-stretch lg:items-start gap-4 lg:gap-5 2xl:gap-6 lg:[&>div]:flex-1" stagger={200} variant="fade-up">
         <ProjectCard
           src="/images/project-rob.webp"
           title="Report On The Blind"

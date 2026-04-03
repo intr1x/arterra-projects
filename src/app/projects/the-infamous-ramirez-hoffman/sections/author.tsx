@@ -4,11 +4,11 @@ import { SectionHeader } from "./overview";
 
 export function AuthorSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 pt-12 lg:pt-20 pb-[155px]">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 pt-12 lg:pt-14 2xl:pt-20 pb-12 lg:pb-[100px] 2xl:pb-[155px]">
       <SectionHeader title="Author" />
 
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:pl-[265px]">
-        <ScrollReveal variant="fade-up" duration={900} className="w-full lg:w-[475px] shrink-0 text-[#3E3E3E] text-[15px] lg:text-[17px] font-medium leading-[1.5] text-justify space-y-4">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 2xl:gap-20 lg:pl-[180px] 2xl:pl-[265px]">
+        <ScrollReveal variant="fade-up" duration={900} className="w-full lg:w-[380px] 2xl:w-[475px] shrink-0 text-[#3E3E3E] text-[15px] lg:text-[15px] 2xl:text-[17px] font-medium leading-[1.5] text-justify space-y-4">
           <p>
             <strong>Roberto Bolaño</strong>, a Chilean novelist, short-story writer, poet and essayist, was born in Chile in 1953. After moving to Mexico when he was young, he returned to Chile in 1973 to &ldquo;help build the revolution&rdquo; by supporting Allende.
           </p>
@@ -23,8 +23,8 @@ export function AuthorSection() {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal variant="fade-left" delay={200} duration={900} className="lg:w-[455px] shrink-0">
-          <div className="relative bg-[#eddbd7] rounded-lg overflow-hidden w-full lg:w-[340px] lg:h-[460px] aspect-[340/460] mb-8">
+        <ScrollReveal variant="fade-left" delay={200} duration={900} className="lg:w-[360px] 2xl:w-[455px] shrink-0">
+          <div className="relative bg-[#eddbd7] rounded-lg overflow-hidden w-full lg:w-[280px] 2xl:w-[340px] lg:h-[380px] 2xl:h-[460px] aspect-[340/460] mb-8">
             <Image
               src="/images/roberto.webp"
               alt="Roberto Bolaño"
@@ -33,10 +33,10 @@ export function AuthorSection() {
               sizes="338px"
             />
           </div>
-          <p className="text-[#3E3E3E] text-xl lg:text-[25px] font-medium leading-[1.2] max-w-[340px]">
+          <p className="text-[#3E3E3E] text-xl lg:text-[21px] 2xl:text-[25px] font-medium leading-[1.2] max-w-[340px]">
             &ldquo;[Roberto Bolaño] The most significant Latin American literary voice of his generation.&rdquo;
           </p>
-          <p className="text-[#b8b8b8] font-bold text-lg lg:text-[21px] leading-none mt-6">
+          <p className="text-[#b8b8b8] font-bold text-lg lg:text-lg 2xl:text-[21px] leading-none mt-6">
             The New York Times
           </p>
         </ScrollReveal>

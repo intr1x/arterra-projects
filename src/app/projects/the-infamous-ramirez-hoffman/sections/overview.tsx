@@ -3,8 +3,8 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 function SectionHeader({ title }: { title: string }) {
   return (
     <ScrollReveal variant="fade-up" duration={700}>
-      <div className="flex items-center gap-4 mb-8 lg:mb-12">
-        <p className="font-bold text-lg lg:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
+      <div className="flex items-center gap-4 mb-8 lg:mb-10 2xl:mb-12">
+        <p className="font-bold text-lg lg:text-lg 2xl:text-xl leading-[1.3] tracking-[0.01em] text-[#3E3E3E] shrink-0">
           {title}
         </p>
         <div className="flex-1 h-px bg-black/20" />
@@ -17,10 +17,10 @@ export { SectionHeader };
 
 export function OverviewSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 py-12 lg:py-14 2xl:py-20">
       <SectionHeader title="Overview" />
 
-      <div className="lg:px-[155px] max-w-none text-[#3E3E3E] text-xl lg:text-[26px] leading-[1.34] text-justify space-y-4">
+      <div className="lg:px-[100px] 2xl:px-[155px] max-w-none text-[#3E3E3E] text-xl lg:text-[22px] 2xl:text-[26px] leading-[1.34] text-justify space-y-4">
         <ScrollReveal variant="fade-up" delay={100}>
           <p>
             <span className="font-light">

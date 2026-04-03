@@ -32,8 +32,8 @@ const REPERTOIRE: TrackProps[] = [
 function Track({ composer, piece }: TrackProps) {
   return (
     <>
-      <div className="flex items-center gap-6 text-base lg:text-lg tracking-[0.01em] leading-[1.4] py-2.5">
-        <p className="font-bold text-[#3E3E3E] w-[200px] lg:w-[241px] shrink-0 whitespace-pre-line">
+      <div className="flex items-center gap-3 lg:gap-5 2xl:gap-6 text-base lg:text-base 2xl:text-lg tracking-[0.01em] leading-[1.4] py-2.5">
+        <p className="font-bold text-[#3E3E3E] w-[140px] sm:w-[200px] lg:w-[200px] 2xl:w-[241px] shrink-0 whitespace-pre-line">
           {composer}
         </p>
         <p className="font-medium text-[#b8b8b8] whitespace-pre-line">
@@ -47,8 +47,8 @@ function Track({ composer, piece }: TrackProps) {
 
 export function ComposersSection() {
   return (
-    <section className="bg-white pr-6 md:pr-10 lg:pr-20 py-12 lg:py-20">
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+    <section className="bg-white pr-6 md:pr-10 lg:pr-12 2xl:pr-20 py-12 lg:py-14 2xl:py-20">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 2xl:gap-16">
         <ScrollReveal variant="fade-right" duration={1000} className="relative bg-[#eddbd7] lg:rounded-r-lg overflow-hidden w-full lg:w-1/2 shrink-0 aspect-[851/899] mx-6 md:mx-10 lg:mx-0">
           <Image
             src="/images/Frame 278.webp"
@@ -59,8 +59,8 @@ export function ComposersSection() {
           />
         </ScrollReveal>
 
-        <ScrollReveal variant="fade-up" delay={200} duration={900} className="flex-1 lg:-mt-[42px]">
-          <p className="font-bold text-[#b8b8b8] text-base lg:text-lg uppercase tracking-[0.01em] leading-[1.4] mb-4">
+        <ScrollReveal variant="fade-up" delay={200} duration={900} className="flex-1 lg:-mt-[32px] 2xl:-mt-[42px] pl-6 md:pl-10 lg:pl-0">
+          <p className="font-bold text-[#b8b8b8] text-base lg:text-base 2xl:text-lg uppercase tracking-[0.01em] leading-[1.4] mb-4">
             Repertoire
           </p>
           <div className="h-px bg-black/20 w-full mb-1" />

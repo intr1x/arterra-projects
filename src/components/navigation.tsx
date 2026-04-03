@@ -48,10 +48,10 @@ export function Navigation() {
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         showScrolledBar
           ? "bg-white border-b border-black/10 py-3 lg:py-4"
-          : "bg-transparent py-10 lg:py-16 pointer-events-none"
+          : "bg-transparent py-10 lg:py-12 2xl:py-16 pointer-events-none"
       }`}
     >
-      <div className="flex items-center justify-between px-6 md:px-10 lg:px-20">
+      <div className="flex items-center justify-between px-6 md:px-10 lg:px-12 2xl:px-20">
         <div className="flex items-center gap-4">
           {!isProjectPage && (
             <button
@@ -88,7 +88,7 @@ export function Navigation() {
             className={`h-auto transition-all duration-300 ${
               showScrolledBar
                 ? "w-0 opacity-0"
-                : "w-20 lg:w-[128px] opacity-100"
+                : "w-20 lg:w-[100px] 2xl:w-[128px] opacity-100"
             }`}
             priority
           />
@@ -99,14 +99,14 @@ export function Navigation() {
             height={70}
             className={`h-auto transition-all duration-300 invert ${
               showScrolledBar
-                ? "w-20 lg:w-24 opacity-100"
+                ? "w-20 lg:w-22 2xl:w-24 opacity-100"
                 : "w-0 opacity-0"
             }`}
           />
         </Link>
 
         <button
-          className={`flex items-center gap-2 text-sm lg:text-base leading-[1.1] cursor-pointer transition-colors duration-500 z-50 menu-toggle pointer-events-auto ${
+          className={`flex items-center gap-2 text-sm lg:text-sm 2xl:text-base leading-[1.1] cursor-pointer transition-colors duration-500 z-50 menu-toggle pointer-events-auto ${
             showScrolledBar
               ? "text-dark-alt hover:text-gold"
               : "text-white hover:opacity-70"

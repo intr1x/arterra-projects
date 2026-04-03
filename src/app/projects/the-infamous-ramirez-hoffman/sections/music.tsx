@@ -4,12 +4,12 @@ import { SectionHeader } from "./overview";
 
 export function MusicSection() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 py-12 lg:py-14 2xl:py-20">
       <SectionHeader title="Music" />
 
       <ScrollReveal variant="fade-right" duration={900}>
-        <div className="flex gap-6 lg:gap-10 items-start lg:px-[135px] mb-16 lg:mb-20">
-          <div className="relative w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full overflow-hidden shrink-0 bg-[#10110c] -mt-5">
+        <div className="flex gap-6 lg:gap-8 2xl:gap-10 items-start lg:px-[80px] 2xl:px-[135px] mb-16 lg:mb-14 2xl:mb-20">
+          <div className="relative w-[60px] h-[60px] lg:w-[80px] 2xl:w-[100px] lg:h-[80px] 2xl:h-[100px] rounded-full overflow-hidden shrink-0 bg-[#10110c] -mt-5">
             <Image
               src="/images/avatar-malkovich.webp"
               alt="John Malkovich"
@@ -20,10 +20,10 @@ export function MusicSection() {
           </div>
 
           <div className="max-w-[1206px]">
-            <p className="text-[#3E3E3E] text-lg lg:text-[27px] font-medium leading-[1.25] mb-6">
+            <p className="text-[#3E3E3E] text-lg lg:text-[22px] 2xl:text-[27px] font-medium leading-[1.25] mb-6">
               &ldquo;There are so many stories in the world or ideas in the world that don&rsquo;t necessarily lend themselves to a play or a concert, but they lend themselves to this kind of collaborative form.&rdquo;
             </p>
-            <p className="text-[#b8b8b8] font-bold text-lg lg:text-[21px] leading-none">
+            <p className="text-[#b8b8b8] font-bold text-lg lg:text-lg 2xl:text-[21px] leading-none">
               John Malkovich
             </p>
           </div>
@@ -31,8 +31,8 @@ export function MusicSection() {
       </ScrollReveal>
 
       <ScrollReveal variant="fade-up" delay={150} duration={900}>
-        <div className="lg:px-[155px]">
-          <p className="text-[#3E3E3E] text-lg lg:text-[25px] font-light leading-[1.4] text-justify max-w-[1302px]">
+        <div className="lg:px-[100px] 2xl:px-[155px]">
+          <p className="text-[#3E3E3E] text-lg lg:text-[21px] 2xl:text-[25px] font-light leading-[1.4] text-justify max-w-[1302px]">
             <strong className="font-bold">John</strong> and{" "}
             <strong className="font-bold">Anastasya</strong> have created an evocative musical soundscape for piano, bandoneon and violin from compositions that are extremely varied in genre, but which all capture the drama and soul of tango. It offers a passionate counterpoint to the understated prose and pared-down poetry of{" "}
             <strong className="font-bold">Bolaño</strong>&rsquo;s writing and includes pieces by{" "}

@@ -33,12 +33,12 @@ export function VideoSection() {
   }, []);
 
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 pt-12 lg:pt-0 pb-12 lg:pb-20">
-      <div className="lg:mb-[100px]">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 pt-12 lg:pt-0 pb-12 lg:pb-14 2xl:pb-20">
+      <div className="mb-0 lg:mb-[60px] 2xl:mb-[100px]">
         <SectionHeader title="Video" />
       </div>
 
-      <div className="lg:px-[135px]">
+      <div className="lg:px-[80px] 2xl:px-[135px]">
       <div className="relative w-full aspect-[1302/854] rounded-lg overflow-hidden bg-black">
         <video
           ref={videoRef}
@@ -70,8 +70,8 @@ export function VideoSection() {
           )}
         </button>
 
-        <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 z-10">
-          <VideoPlayerCard videoRef={videoRef} />
+        <div className="absolute bottom-4 lg:bottom-5 2xl:bottom-6 left-4 lg:left-5 2xl:left-6 z-10">
+          <VideoPlayerCard videoRef={videoRef} compact />
         </div>
       </div>
       </div>

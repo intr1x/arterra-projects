@@ -94,14 +94,14 @@ export function ComposersBioSection() {
   const active = COMPOSERS[activeIndex];
 
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
-      <div className="lg:mb-[130px]">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 py-12 lg:py-14 2xl:py-20">
+      <div className="lg:mb-[90px] 2xl:mb-[130px]">
         <SectionHeader title="Composers" />
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:pl-[140px]">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 2xl:gap-20 lg:pl-[100px] 2xl:pl-[140px]">
         <ScrollReveal variant="fade-right" duration={900} className="flex-1 max-w-[540px]">
-          <p className="text-2xl lg:text-[38px] font-light leading-[1.6]">
+          <p className="text-2xl lg:text-[30px] 2xl:text-[38px] font-light leading-[1.6]">
             {COMPOSERS.map((c, i) => {
               const isActive = i === activeIndex;
               const isFirst = i === 0;
@@ -138,10 +138,10 @@ export function ComposersBioSection() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up" delay={200} duration={900} className="flex-1 max-w-[506px]">
-          <p className="font-bold text-[#3E3E3E] text-base lg:text-lg tracking-[0.01em] leading-[1.4] mb-4">
+          <p className="font-bold text-[#3E3E3E] text-base lg:text-base 2xl:text-lg tracking-[0.01em] leading-[1.4] mb-4">
             Biography
           </p>
-          <div className="text-[#3E3E3E] text-base lg:text-lg font-medium leading-[1.4] text-justify space-y-4">
+          <div className="text-[#3E3E3E] text-base lg:text-base 2xl:text-lg font-medium leading-[1.4] text-justify space-y-4">
             <p>
               <strong>{active.title}</strong>{" "}
               <span className="text-[#b2b2b2]">{active.text}</span>

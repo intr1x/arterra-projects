@@ -101,7 +101,7 @@ export function GallerySection() {
 
       <button
         onClick={prev}
-        className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[95px] text-white/60 hover:text-white transition-colors cursor-pointer"
+        className="absolute left-6 lg:left-10 2xl:left-12 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[95px] text-white/60 hover:text-white transition-colors cursor-pointer"
         aria-label="Previous"
       >
         <svg width="34" height="95" viewBox="0 0 34 95" fill="none">
@@ -111,7 +111,7 @@ export function GallerySection() {
 
       <button
         onClick={next}
-        className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[95px] text-white/60 hover:text-white transition-colors cursor-pointer"
+        className="absolute right-6 lg:right-10 2xl:right-12 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[95px] text-white/60 hover:text-white transition-colors cursor-pointer"
         aria-label="Next"
       >
         <svg width="34" height="95" viewBox="0 0 34 95" fill="none">

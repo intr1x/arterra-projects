@@ -94,7 +94,7 @@ function ArtistCard({ artist, onClick }: { artist: ArtistData; onClick: () => vo
       />
       <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-4 p-8 pb-11">
         <div className="text-center w-full font-medium">
-          <p className="text-white text-xl lg:text-2xl leading-[1.4] whitespace-nowrap">
+          <p className="text-white text-xl lg:text-xl 2xl:text-2xl leading-[1.4] whitespace-nowrap">
             {artist.name}
           </p>
           <p className="text-white/50 text-sm leading-[1.4]">{artist.role}</p>
@@ -146,13 +146,13 @@ function ArtistDrawer({ artist, onClose }: { artist: ArtistData | null; onClose:
       />
 
       <div
-        className={`fixed top-0 right-0 z-[60] h-full w-full sm:w-[480px] lg:w-[560px] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-y-auto ${
+        className={`fixed top-0 right-0 z-[60] h-full w-full sm:w-[480px] lg:w-[480px] 2xl:w-[560px] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {artist && (
-          <div className="px-6 lg:px-8 pb-6 lg:pb-8 pt-6 lg:pt-8">
-            <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden mb-8 lg:mb-10">
+          <div className="px-6 lg:px-6 2xl:px-8 pb-6 lg:pb-6 2xl:pb-8 pt-6 lg:pt-6 2xl:pt-8">
+            <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden mb-8 lg:mb-8 2xl:mb-10">
               <button
                 onClick={onClose}
                 className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors cursor-pointer"
@@ -180,17 +180,17 @@ function ArtistDrawer({ artist, onClose }: { artist: ArtistData | null; onClose:
             </div>
 
             {artist.quote && (
-              <div className="text-center mb-10 lg:mb-12">
-                <p className="text-xl lg:text-2xl leading-[1.3] text-[#3E3E3E] mb-2">
+              <div className="text-center mb-10 lg:mb-10 2xl:mb-12">
+                <p className="text-xl lg:text-xl 2xl:text-2xl leading-[1.3] text-[#3E3E3E] mb-2">
                   {artist.quote}
                 </p>
-                <p className="text-sm lg:text-base text-[#9A7145]">
+                <p className="text-sm lg:text-sm 2xl:text-base text-[#9A7145]">
                   {artist.quoteSource}
                 </p>
               </div>
             )}
 
-            <h2 className="text-[28px] lg:text-[32px] leading-[1.1] text-black tracking-[-0.02em] mb-6 lg:mb-8">
+            <h2 className="text-[28px] lg:text-[26px] 2xl:text-[32px] leading-[1.1] text-black tracking-[-0.02em] mb-6 lg:mb-6 2xl:mb-8">
               {artist.name}.
             </h2>
 
@@ -202,7 +202,7 @@ function ArtistDrawer({ artist, onClose }: { artist: ArtistData | null; onClose:
               {artist.bio.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-[15px] lg:text-base leading-[1.6] text-black/80"
+                  className="text-[15px] lg:text-[15px] 2xl:text-base leading-[1.6] text-black/80"
                 >
                   {paragraph}
                 </p>
@@ -223,9 +223,9 @@ export function ArtistsSection() {
 
   return (
     <>
-      <section className="bg-white px-6 md:px-10 lg:px-20 py-12 lg:py-20">
+      <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 py-12 lg:py-14 2xl:py-20">
         <SectionHeader title="Artists" />
-        <div className="flex flex-wrap gap-4 lg:gap-6">
+        <div className="flex flex-wrap gap-4 lg:gap-5 2xl:gap-6">
           {ARTISTS.map((artist, i) => (
             <ScrollReveal
               key={artist.name}

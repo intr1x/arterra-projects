@@ -10,8 +10,8 @@ interface QuoteCardProps {
 
 function QuoteCard({ avatar, children, author }: QuoteCardProps) {
   return (
-    <div className="flex gap-6 lg:gap-8 items-start flex-1 min-w-0">
-      <div className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden shrink-0 bg-light-gray">
+    <div className="flex gap-6 lg:gap-6 2xl:gap-8 items-start flex-1 min-w-0">
+      <div className="relative w-12 h-12 lg:w-12 2xl:w-14 lg:h-12 2xl:h-14 rounded-full overflow-hidden shrink-0 bg-light-gray">
         <Image
           src={avatar}
           alt={author}
@@ -20,11 +20,11 @@ function QuoteCard({ avatar, children, author }: QuoteCardProps) {
           sizes="56px"
         />
       </div>
-      <div className="flex flex-col gap-4 lg:gap-6 max-w-[494px]">
-        <div className="text-[16px] lg:text-[23px] leading-[1.2] text-dark-alt">
+      <div className="flex flex-col gap-4 lg:gap-5 2xl:gap-6 max-w-[494px]">
+        <div className="text-[16px] lg:text-[19px] 2xl:text-[23px] leading-[1.2] text-dark-alt">
           {children}
         </div>
-        <p className="text-[14px] lg:text-[16px] font-medium leading-none text-dark-alt/40">
+        <p className="text-[14px] lg:text-[14px] 2xl:text-[16px] font-medium leading-none text-dark-alt/40">
           {author}
         </p>
       </div>
@@ -34,8 +34,8 @@ function QuoteCard({ avatar, children, author }: QuoteCardProps) {
 
 export function QuotesSection2() {
   return (
-    <section className="bg-white px-6 md:px-10 lg:px-20 py-16 lg:py-28">
-      <RevealGroup className="flex flex-col lg:flex-row gap-12 lg:gap-16" stagger={200} variant="fade-up">
+    <section className="bg-white px-6 md:px-10 lg:px-12 2xl:px-20 py-16 lg:py-20 2xl:py-28">
+      <RevealGroup className="flex flex-col lg:flex-row gap-12 lg:gap-10 2xl:gap-16" stagger={200} variant="fade-up">
         <QuoteCard
           avatar="/images/avatar-malkovich.webp"
           author="John Malkovich"

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 interface VideoPlayerCardProps {
   videoRef: React.RefObject<HTMLVideoElement | null>;
+  compact?: boolean;
 }
 
 function formatTime(seconds: number): string {
@@ -12,7 +13,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export function VideoPlayerCard({ videoRef }: VideoPlayerCardProps) {
+export function VideoPlayerCard({ videoRef, compact = false }: VideoPlayerCardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(46);
@@ -80,14 +81,16 @@ export function VideoPlayerCard({ videoRef }: VideoPlayerCardProps) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="backdrop-blur-[14px] bg-gradient-to-r from-white/30 to-white/10 rounded-lg p-4 w-full max-w-[374px] flex flex-col gap-3">
-      {/* Title row */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          {/* Play / Pause button */}
+    <div className={`backdrop-blur-[14px] bg-gradient-to-r from-white/30 to-white/10 rounded-lg w-full max-w-[374px] flex flex-col ${
+      compact ? "p-2.5 lg:p-3 2xl:p-4 gap-2 lg:gap-2.5 2xl:gap-3" : "p-4 gap-3"
+    }`}>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2.5 min-w-0">
           <button
             onClick={togglePlay}
-            className="w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            className={`rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors cursor-pointer shrink-0 ${
+              compact ? "w-6 h-6 lg:w-7 lg:h-7" : "w-7 h-7"
+            }`}
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isPlaying ? (
@@ -101,16 +104,19 @@ export function VideoPlayerCard({ videoRef }: VideoPlayerCardProps) {
               </svg>
             )}
           </button>
-          <span className="font-medium text-off-white text-sm leading-[1.1]">
+          <span className={`font-medium text-off-white leading-[1.1] ${
+            compact ? "text-xs lg:text-xs 2xl:text-sm" : "text-sm"
+          }`}>
             Behind the Scenes
           </span>
         </div>
-        <span className="font-medium text-off-white text-sm leading-[1.1] tabular-nums">
+        <span className={`font-medium text-off-white leading-[1.1] tabular-nums ${
+          compact ? "text-xs lg:text-xs 2xl:text-sm" : "text-sm"
+        }`}>
           {formatTime(currentTime)} / {formatTime(duration)}
         </span>
       </div>
 
-      {/* Progress bar */}
       <div
         ref={progressRef}
         className="relative h-1 bg-white/20 rounded-full cursor-pointer group"
@@ -128,8 +134,9 @@ export function VideoPlayerCard({ videoRef }: VideoPlayerCardProps) {
         />
       </div>
 
-      {/* Description */}
-      <p className="text-off-white text-sm leading-[1.2] opacity-80 ml-[38px]">
+      <p className={`text-off-white leading-[1.2] opacity-80 ml-[38px] ${
+        compact ? "hidden lg:block text-[10px] lg:text-[11px] 2xl:text-xs" : "text-xs"
+      }`}>
         Report on the Blind
         <br />
         John Malkovich &amp; Anastasya Terenkova

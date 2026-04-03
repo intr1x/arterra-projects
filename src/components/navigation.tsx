@@ -45,6 +45,7 @@ export function Navigation() {
 
   return (
     <nav
+      data-compensate-scroll
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         showScrolledBar
           ? "bg-white border-b border-black/10 py-3 lg:py-4"
